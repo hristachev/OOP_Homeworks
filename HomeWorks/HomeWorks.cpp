@@ -2,7 +2,7 @@
 #include <cassert>
 #include <vector>
 #include "Container.h"
-#include "СlassCard.h"
+#include "ClassCard.h"
 
 using std::cout; using std::cin; using std::endl;
 
@@ -21,13 +21,14 @@ public:
             delete* iter;
             *iter = nullptr;
             ++iter;
+            Clear();
         }
     }
     int GetValue() const {
         if (cards.empty()) {
             return 0;
         } //Проверка на отсутствие карт в руке
-        if (cards[0]->GetValue() == 0)
+        if (cards[0]->GetFaceDown())
         {
             return 0;
         } //Возвращает 0 если первая карта лежит рубашкой вверх.
@@ -46,6 +47,7 @@ public:
         }
         if (isAceOnHand && value <= 11) {
             value += 10;
+            return value;
         } // проверяет наличие туза в руке и при общем счете меньше или равному 11, учитывает туз за 11 баллов вместо 1
     }
     ~Hand(){}
