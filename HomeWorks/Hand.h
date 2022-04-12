@@ -27,18 +27,18 @@ public:
     int GetValue() const {
         if (cards.empty()) {
             return 0;
-        } //Проверка на отсутствие карт в руке
+        } //�������� �� ���������� ���� � ����
         if (cards[0]->GetFaceDown())
         {
             return 0;
-        } //Возвращает 0 если первая карта лежит рубашкой вверх.
+        } //���������� 0 ���� ������ ����� ����� �������� �����.
         int value = 0;
         std::vector<Card*>::const_iterator iter;
         for (iter = cards.begin(); iter != cards.end(); ++iter)
         {
             value += (*iter)->GetValue();
         }
-        bool isAceOnHand = false; //определяем есть ли в руке туз
+        bool isAceOnHand = false; //���������� ���� �� � ���� ���
         for (iter = cards.begin(); iter != cards.end(); ++iter) {
             if ((*iter)->GetValue() == CardValue::ACE)
             {
@@ -47,7 +47,7 @@ public:
         }
         if (isAceOnHand && value <= 11) {
             value += 10;
-        } // проверяет наличие туза в руке и при общем счете меньше или равному 11, учитывает туз за 11 баллов вместо 1
+        } // ��������� ������� ���� � ���� � ��� ����� ����� ������ ��� ������� 11, ��������� ��� �� 11 ������ ������ 1
         return value;
     } 
     ~Hand() {}

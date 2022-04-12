@@ -6,13 +6,13 @@
 
 using std::cout;
 
-enum Suit : char { HEARTS = 3, DIAMONDS = 4, CLUBS = 5, SPADES = 6 };// HEARTS = черви, DIAMONDS = буби, CLUBS = трефы, SPADES = пики, сделал такую инициализацию для себя, поиграться с выводом в консоль
+enum Suit : char { HEARTS = 3, DIAMONDS = 4, CLUBS = 5, SPADES = 6 };// HEARTS = �����, DIAMONDS = ����, CLUBS = �����, SPADES = ����, ������ ����� ������������� ��� ����, ���������� � ������� � �������
 enum CardValue { ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK = 10, QUEEN = 10, KING = 10 };
 class Card {
 private:
 	Suit suit;
 	CardValue cardValue;
-	bool faceDown; // faceDown - рубашка вверх
+	bool faceDown; // faceDown - ������� �����
 public:
 	Card(Suit suit, CardValue value, bool faceDown = true) : suit(suit), cardValue(value), faceDown(faceDown) {
 		this->suit = suit;

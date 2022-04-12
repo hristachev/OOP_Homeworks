@@ -16,7 +16,7 @@ public:
 	
 	virtual void IsHitting() const = 0;
 	bool IsBoosted() {
-	 // если сумма очков карт у игрока больше 21 = перебор, возвращает true. В остальных случаях false.
+	 // ���� ����� ����� ���� � ������ ������ 21 = �������, ���������� true. � ��������� ������� false.
 		return (GetValue() > 21);
 	}
 	void Bust() const {
