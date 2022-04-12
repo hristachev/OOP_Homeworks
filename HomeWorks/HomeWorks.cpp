@@ -21,8 +21,8 @@ public:
             delete* iter;
             *iter = nullptr;
             ++iter;
-            Clear();
         }
+        cards.clear();
     }
     int GetValue() const {
         if (cards.empty()) {
@@ -47,9 +47,10 @@ public:
         }
         if (isAceOnHand && value <= 11) {
             value += 10;
-            return value;
         } // проверяет наличие туза в руке и при общем счете меньше или равному 11, учитывает туз за 11 баллов вместо 1
+        return value;
     }
+
     ~Hand(){}
 
 };
