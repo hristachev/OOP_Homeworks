@@ -16,7 +16,7 @@ public:
 	
 	virtual void IsHitting() const = 0;
 	bool IsBoosted() {
-	 // ���� ����� ����� ���� � ������ ������ 21 = �������, ���������� true. � ��������� ������� false.
+	 // Проверяет есть ли у игрока перебор, в случае перебора возвращает true, иначе false
 		return (GetValue() > 21);
 	}
 	void Bust() const {
